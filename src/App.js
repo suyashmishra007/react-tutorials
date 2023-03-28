@@ -7,13 +7,14 @@ import Root from "./pages/Root";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/root",
     element: <Root />,
     errorElement: <Error />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/products", element: <Products /> },
-      { path: "/products/:productId", element: <ProductDetail /> },
+      { index: true, element: <Home /> },
+      // { path: "", element: <Home /> }, SAME AS ABOVE
+      { path: "products", element: <Products /> },
+      { path: "products/:productId", element: <ProductDetail /> },
     ],
   },
 ]);
